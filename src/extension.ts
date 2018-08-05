@@ -2,15 +2,13 @@
 
 import * as vscode from 'vscode';
 
+import container from './inversify.config';
+import TYPES from './types';
+import { CommandsManager } from './commands/commands-manager';
+
 export function activate(context: vscode.ExtensionContext) {
-
-    console.log('Congratulations, your extension "vscode-di" is now active!');
-
-    let disposable = vscode.commands.registerCommand('extension.sayHello', () => {
-        vscode.window.showInformationMessage('Hello World!');
-    });
-
-    context.subscriptions.push(disposable);
+    const cmdManager = container.get<CommandsManager>(TYPES.CommandManager);
+    cmdManager.registerCommands(context);
 }
 
 export function deactivate() {

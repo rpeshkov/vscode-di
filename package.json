@@ -11,14 +11,19 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.add",
+        "onCommand:extension.remove"
     ],
     "main": "./out/extension",
     "contributes": {
         "commands": [
             {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+                "command": "extension.add",
+                "title": "DI: Add"
+            },
+            {
+                "command": "extension.remove",
+                "title": "DI: Remove"
             }
         ]
     },
@@ -34,7 +39,7 @@
         "vscode": "^1.1.6",
         "tslint": "^5.8.0",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "@types/mocha": "^5.2.5"
     },
     "dependencies": {
         "inversify": "^4.13.0",

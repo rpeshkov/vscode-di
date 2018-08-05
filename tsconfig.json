@@ -6,9 +6,9 @@
         "lib": ["es6"],
         "sourceMap": true,
         "rootDir": "src",
+        "baseUrl": "src",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
-        "types": ["reflect-metadata"],
         "strict": true,
         "noUnusedLocals": true
     },
